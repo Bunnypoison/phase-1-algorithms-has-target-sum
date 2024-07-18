@@ -1,20 +1,19 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const differences = {};
+
+  for (let num of array) {
+    const difference = target - num;
+    if (differences[num]) {
+      return true;
+    }
+    differences[difference] = true;
+  }
+
+  return false;
 }
 
-/* 
-  Write the Big O time complexity of your function here
-*/
+module.exports = hasTargetSum;
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
